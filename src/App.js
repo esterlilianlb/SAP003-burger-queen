@@ -1,17 +1,17 @@
 import React from 'react';
-import Header from './components/Header.js';
-import menu from './pages/initial.js'
-// import {db} from './components/firebase.js'
+import menu from './pages/initial.js';
+
 
 
 function App() {
   return (
     <div className="App">
-      < Header />
-      {menu}
+      {menu()}
+      
     </div>
   );
 }
 
 export default App;
+
 
