@@ -1,5 +1,3 @@
-import firebase from 'firebase';
-
 var firebaseConfig = {
     apiKey: "AIzaSyALFd7KJj3rN0LtduG1w7Xgovt39dTVIzM",
     authDomain: "ester-burgerqueen.firebaseapp.com",
@@ -10,7 +8,5 @@ var firebaseConfig = {
     appId: "1:546991337895:web:fc7a639ffe32d551da4682",
     measurementId: "G-PVM6Z3D86M"
   };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-  export default db;
+
+  
