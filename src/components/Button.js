@@ -1,11 +1,15 @@
 import React from 'react';
 
-const Button = (props) => (
-    <button
-    className={props.className}
-    onClick={props.onClick}
-    >
-    {props.title}
-    </button>
-)
+
+function Button(props) {
+    return(
+        <button
+        className={props.className}
+        id={props.id}
+        onClick={props.handleClick}
+        text={props.text}
+        >
+        </button>
+    )
+}
 export default Button;

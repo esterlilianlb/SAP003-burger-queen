@@ -1,5 +1,6 @@
 import firebase from 'firebase';
 
+
 var firebaseConfig = {
     apiKey: "AIzaSyALFd7KJj3rN0LtduG1w7Xgovt39dTVIzM",
     authDomain: "ester-burgerqueen.firebaseapp.com",
