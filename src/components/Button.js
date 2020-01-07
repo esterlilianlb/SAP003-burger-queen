@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './Button.css';
 
 function Button(props) {
     return(
@@ -7,8 +7,10 @@ function Button(props) {
         className={props.className}
         id={props.id}
         onClick={props.handleClick}
-        text={props.text}
+        key={props.key}
         >
+        {props.title}
+        {props.valor}
         </button>
     )
 }

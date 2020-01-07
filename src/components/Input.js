@@ -1,4 +1,5 @@
 import React from 'react';
+import './Input.css';
 
 function Input(props) {
    return(
@@ -6,8 +7,8 @@ function Input(props) {
        id={props.id}
        className={props.className}
        type={props.type}
+       placeholder={props.placeholder}
        >
-       title.props
        </input>
    )
 }
