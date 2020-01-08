@@ -1,5 +1,12 @@
 button {
-    border-radius: 5px;
+    border-radius: 8px;
     width: 100px;
     height: 100px;
+    background: #da552f;
+    color: #FFF;
+    font-weight: 20px;
+}
+
+button:active {
+    background: lightseagreen;
 }
