@@ -9,6 +9,7 @@ function Button(props) {
         onClick={props.handleClick}
         key={props.key}
         >
+        {props.label}
         {props.title}
         {props.valor}
         </button>
