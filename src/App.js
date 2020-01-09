@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import Waiter from './pages/waiter';
 import Kitchen from './pages/kitchen';
-import Nav from './components/Nav';
+import Nav from './components/Nav.js';
 
 
 
