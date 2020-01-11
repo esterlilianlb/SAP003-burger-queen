@@ -14,12 +14,12 @@ import '../../images/logo.png';
 function Home() {
   return (
     <Router>
-    <section>
-        <div>
+    <section className={"main-section"}>
+        <div className={"logo"}>
             <img alt="burger-queen" url="logo.png"/>
         </div>
         <h1>Burger Queen</h1>
-      <Nav/>
+      <div className="nav"><Nav/></div>
       {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
       <Switch>

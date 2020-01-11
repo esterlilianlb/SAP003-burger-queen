@@ -1,25 +1,22 @@
 nav {
-    width: 700px;
-    margin: 50px auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 li {
-    display: block;
-    float: left;
-    padding: 12px 20px;
-    margin-right: 5px;
     cursor: pointer;
-    transition: background-color .3s;
-    border: 1px solid black;
+    padding:30px 40px;
+    margin:0px 2px;
+    background:#08036d;
+    display: inline-block;
+    color:#fff;
+    border-radius:3px 3px 0px 0px;
+    box-shadow: 0 0.5rem 0.8rem #00000080;
+    font-size: 30px;
 }
 
-li:hover {
-    background: #5b9780;
-    color: #fff;
+.tab {
+    display: none;
 }
-
-li:active {
-    background: #5b9780;
-    color: #fff;
-}
-

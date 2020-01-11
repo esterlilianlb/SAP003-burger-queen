@@ -4,14 +4,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  background: #eceae9;
-}
-
-body {
-  margin: 0;
-  padding: 0;
+  background: none;
   font-family: Righteous, cursive;
 }
 
+body {
+  background: pink;
+}
 

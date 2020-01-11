@@ -1,0 +1,15 @@
+div.menu-card {
+    border: 1px solid black;
+    background: #08086D;
+    color: #fff;
+    font-weight: bold;
+    display: flex;
+    width: 200px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px 1px #7f7f81;
+    
+}
