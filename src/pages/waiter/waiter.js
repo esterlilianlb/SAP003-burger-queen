@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
-import db from '../utils/config';
-import Button from '../components/Button';
-import Input from '../components/Input';
+import db from '../../utils/config';
+import Button from '../../components/Button/Button';
+import Input from '../../components/Input/Input';
+import MenuCard from '../../components/MenuCard/MenuCard'
 import './waiter.css';
 import {useForm} from 'react-hook-form';
 
@@ -52,10 +53,11 @@ function Waiter() {
 
     return(
         <div className="main-div">
+          
           <div className="menu">
            <section className="breakfast-menu">
-           {breakfastMenu.map(item => <Button
-           key={item.id}
+           {breakfastMenu.map((item, index) => <MenuCard
+           key={index}
            title={item.nome}
            handleClick={()=> setOrder([...order, item])}
            valor={" R$"+item.valor}
@@ -63,8 +65,8 @@ function Waiter() {
            </section>
            <section className="allday-menu">
                <section className="allday-food">
-                 {allDayMenu.map(item => <Button
-               key={item.id}
+                 {allDayMenu.map((item, index) => <MenuCard
+               key={index}
                title={item.nome}
                handleClick={()=> setOrder(verifyOptions(item))}
                valor={" R$"+item.valor}
@@ -72,7 +74,7 @@ function Waiter() {
                )}  
                 </section>
            <section className="allday-drinks">
-              {drinks.map((item, index)=> <Button
+              {drinks.map((item, index)=> <MenuCard
                 key={index}
                 title={item.nome}
                 handleClick={()=> setOrder(addOrder(item))}
