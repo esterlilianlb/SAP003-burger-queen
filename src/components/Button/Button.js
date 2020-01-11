@@ -8,6 +8,7 @@ function Button(props) {
         id={props.id}
         onClick={props.handleClick}
         key={props.key}
+        type={props.type}
         >
         {props.label}
         {props.title}

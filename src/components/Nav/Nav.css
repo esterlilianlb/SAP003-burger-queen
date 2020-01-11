@@ -1,0 +1,25 @@
+nav {
+    width: 700px;
+    margin: 50px auto;
+}
+
+li {
+    display: block;
+    float: left;
+    padding: 12px 20px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+    border: 1px solid black;
+}
+
+li:hover {
+    background: #5b9780;
+    color: #fff;
+}
+
+li:active {
+    background: #5b9780;
+    color: #fff;
+}
+
