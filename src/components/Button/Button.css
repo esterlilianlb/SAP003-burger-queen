@@ -1,10 +1,11 @@
 button {
     border-radius: 8px;
-    width: 100px;
-    height: 100px;
-    background: #da552f;
+    width: 25px;
+    height: auto;
+    background: #08086D;
     color: #FFF;
     font-weight: 20px;
+    text-align: center;
 }
 
 button:active {

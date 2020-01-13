@@ -2,7 +2,7 @@ nav {
     display:flex;
     align-items: center;
     justify-content: center;
-    
+        
 }
 
 li {
@@ -12,11 +12,20 @@ li {
     background:#08036d;
     display: inline-block;
     color:#fff;
-    border-radius:3px 3px 0px 0px;
+    border-radius:6px 6px 0px 0px;
     box-shadow: 0 0.5rem 0.8rem #00000080;
     font-size: 30px;
 }
 
 .tab {
     display: none;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul {
+    display: flex;
 }

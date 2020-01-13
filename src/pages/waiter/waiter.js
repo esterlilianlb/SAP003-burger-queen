@@ -4,6 +4,7 @@ import Input from '../../components/Input/Input';
 import MenuCard from '../../components/MenuCard/MenuCard'
 import './waiter.css';
 import {useForm} from 'react-hook-form';
+import Button from '../../components/Button/Button'
 
 
 function Waiter() {
@@ -29,6 +30,10 @@ function Waiter() {
 
     const addOrder = (item) => {
       return setOrder([...order, item])
+    }
+
+    const removeItem = (item) => {
+      
     }
 
 
@@ -82,9 +87,15 @@ function Waiter() {
             />
               {order.map((item, index)=> <p key={item.id + index}>
                 {item.nome} R${item.valor},00
-               
+                <Button
+                key={index}
+                title={'x'}
+                handleClick={() => removeItem }
+                />
               </p>)}
+              <p>Total: </p>
               <Input
+              className={"send"}
               type={"submit"}
               />
             </form>

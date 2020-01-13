@@ -8,7 +8,7 @@ import Waiter from '../../pages/waiter/waiter';
 import Kitchen from '../../pages/kitchen/kitchen';
 import Nav from '../../components/Nav/Nav';
 import './home.css';
-import '../../images/logo.png';
+import logo from '../../images/logo.png';
 
 
 function Home() {
@@ -16,9 +16,9 @@ function Home() {
     <Router>
     <section className={"main-section"}>
         <div className={"logo"}>
-            <img alt="burger-queen" url="logo.png"/>
-        </div>
+            <img alt="burger-queen" src={logo}/>
         <h1>Burger Queen</h1>
+        </div>
       <div className="nav"><Nav/></div>
       {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
