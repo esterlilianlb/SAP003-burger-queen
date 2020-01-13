@@ -1,18 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import db from '../../utils/config';
-import Button from '../../components/Button/Button';
 import Input from '../../components/Input/Input';
 import MenuCard from '../../components/MenuCard/MenuCard'
+import Nav from '../../components/Nav/Nav'
 import './waiter.css';
 import {useForm} from 'react-hook-form';
+import Button from '../../components/Button/Button'
+import logo from '../../images/logo.png';
 
 
 function Waiter() {
     const [menu, setMenu] = useState([]);
     const [order, setOrder] = useState([]);   
-    const [modal, setModal] = useState({status: false});
-    const [options, setOptions] = useState("");
-    const [extras, setExtras] = useState("");
+    
     
     useEffect(() => {
         db.collection('menu').get().then(snapshot=> 
@@ -34,26 +34,21 @@ function Waiter() {
       return setOrder([...order, item])
     }
 
-    const verifyOptions = (item) => {
-      if(item.add.length !== 0) {
-        setModal({status: true, item: item});
-      } else if(item.burger.length !== 0) {
-        setModal({status: true, item: item});
-      } else {
-        addOrder(item);
-      }
+    const removeItem = (item) => {
       
     }
-    
-    const addOptionsExtras = () => {
-    const updatedItem = {...modal.item, name:`${modal.item.name} ${options} ${extras}`};
-    addOrder(updatedItem);
-    setModal({status: false})
-  }
+
 
     return(
+      <div>
+        <div className="logo-waiter">
+        <img alt="burger-queen" src={logo}/>
+        <h1>Burger Queen</h1>
+        </div>
+
+        <div className="nav"><Nav/></div>
+                 
         <div className="main-div">
-          
           <div className="menu">
            <section className="breakfast-menu">
            {breakfastMenu.map((item, index) => <MenuCard
@@ -68,7 +63,7 @@ function Waiter() {
                  {allDayMenu.map((item, index) => <MenuCard
                key={index}
                title={item.nome}
-               handleClick={()=> setOrder(verifyOptions(item))}
+               handleClick={()=> setOrder([...order, item])}
                valor={" R$"+item.valor}
                />
                )}  
@@ -77,32 +72,14 @@ function Waiter() {
               {drinks.map((item, index)=> <MenuCard
                 key={index}
                 title={item.nome}
-                handleClick={()=> setOrder(addOrder(item))}
+                handleClick={()=> setOrder([...order, item])}
                 valor={" R$"+item.valor}
                 />)} 
            </section>                
            </section>
            
            </div>
-           {modal.status ? (
-             <div>
-               <h3>Extras</h3>
-               {modal.item.burger.map((elem, index) => (
-                 <div key={index}>
-                 <input onChange={() => setExtras(`${extras} ${elem}`)} type='radio' name='extras' value={elem}></input>
-                 <label>{elem}</label>
-                 </div>
-               ))}
-               <h3>Opcionais</h3>
-               {modal.item.add.map((elem, index) => (
-                 <div key={index}>
-                 <input onChange={() => setOptions(`${options} ${elem}`)} type='radio' name='opcionais' value={elem}></input>
-                 <label>{elem}</label>
-                 <button onClick={addOptionsExtras()}>Adicionar</button>
-                 </div>
-               ))}
-             </div>
-           ) : false }
+           
            <form className="order-list" onSubmit={handleSubmit(onSubmit)}>
              <h1>Meu pedido</h1>
            <Input 
@@ -119,14 +96,19 @@ function Waiter() {
             />
               {order.map((item, index)=> <p key={item.id + index}>
                 {item.nome} R${item.valor},00
-               
+                <Button
+                title={'x'}
+                handleClick={() => removeItem }
+                />
               </p>)}
+              <p>Total: </p>
               <Input
+              className={"send"}
               type={"submit"}
               />
             </form>
         </div>
-
+      </div>
     )
 }
 

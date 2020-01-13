@@ -4,16 +4,19 @@ import './Nav.css';
 
 function Nav() {
     return(
-        <nav className="nav">
+      <nav className="nav">
         <ul className="sections">
           <li>
-            <Link to="/waiter">Waiter</Link>
+          <input type='radio' className="tab" name='css-tabs' defaultChecked/>
+          <Link to="/waiter">Waiter</Link>
           </li>
           <li>
-            <Link to="/kitchen">Kitchen</Link>
+          <input type='radio' className="tab" name='css-tabs' defaultChecked/>
+          <Link to="/kitchen">Kitchen</Link>
           </li>
         </ul>
       </nav>
+     
     )
 }
 
