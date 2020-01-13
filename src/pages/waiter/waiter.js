@@ -2,9 +2,11 @@ import React, {useEffect, useState} from 'react';
 import db from '../../utils/config';
 import Input from '../../components/Input/Input';
 import MenuCard from '../../components/MenuCard/MenuCard'
+import Nav from '../../components/Nav/Nav'
 import './waiter.css';
 import {useForm} from 'react-hook-form';
 import Button from '../../components/Button/Button'
+import logo from '../../images/logo.png';
 
 
 function Waiter() {
@@ -38,8 +40,15 @@ function Waiter() {
 
 
     return(
+      <div>
+        <div className="logo-waiter">
+        <img alt="burger-queen" src={logo}/>
+        <h1>Burger Queen</h1>
+        </div>
+
+        <div className="nav"><Nav/></div>
+                 
         <div className="main-div">
-          
           <div className="menu">
            <section className="breakfast-menu">
            {breakfastMenu.map((item, index) => <MenuCard
@@ -88,7 +97,6 @@ function Waiter() {
               {order.map((item, index)=> <p key={item.id + index}>
                 {item.nome} R${item.valor},00
                 <Button
-                key={index}
                 title={'x'}
                 handleClick={() => removeItem }
                 />
@@ -100,7 +108,7 @@ function Waiter() {
               />
             </form>
         </div>
-
+      </div>
     )
 }
 
