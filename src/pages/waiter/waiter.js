@@ -14,6 +14,7 @@ function Waiter() {
     const [order, setOrder] = useState([]);   
     const [table, setTable] = useState("");
     const [clientName, setClientName] = useState("");
+    const [total, setTotal] = useState(0)
     
     
     useEffect(() => {
