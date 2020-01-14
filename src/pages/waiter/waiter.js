@@ -9,6 +9,7 @@ import Button from '../../components/Button/Button'
 import logo from '../../images/logo.png';
 
 
+
 function Waiter() {
     const [menu, setMenu] = useState([]);
     const [order, setOrder] = useState([]);   
@@ -70,8 +71,12 @@ function Waiter() {
         <div className="nav"><Nav/></div>
                  
         <div className="main-div">
+          
           <div className="menu">
-           <section className="breakfast-menu">
+            <Input name='tabs' onChange ='checked' type='radio' id='tab1' className='input' />
+            <label htmlFor='tab1' className='label'>Café da Manhã</label>
+            
+           <section className="breakfast-menu" id='panel'>
            {breakfastMenu.map((item, index) => <MenuCard
            key={index}
            title={item.nome}
@@ -79,8 +84,11 @@ function Waiter() {
            valor={" R$"+item.valor}
            />)}
            </section>
-           <section className="allday-menu">
+           <Input name='tabs' type='radio' id='tab2' className='input' />
+            <label htmlFor='tab2' className='label'>Lanche</label>
+           <section className="allday-menu" id='panel'>
                <section className="allday-food">
+           <h4>Comidas</h4>
                  {allDayMenu.map((item, index) => <MenuCard
                key={index}
                title={item.nome}
@@ -90,6 +98,7 @@ function Waiter() {
                )}  
                 </section>
            <section className="allday-drinks">
+                <h4>Bebidas</h4>
               {drinks.map((item, index)=> <MenuCard
                 key={index}
                 title={item.nome}
@@ -98,9 +107,8 @@ function Waiter() {
                 />)} 
            </section>                
            </section>
-           
            </div>
-           
+                      
            <form className="order-list" onSubmit={handleSubmit(onSubmit)}>
              <h1>Meu pedido</h1>
              <Input 
