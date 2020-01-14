@@ -12,6 +12,8 @@ import logo from '../../images/logo.png';
 function Waiter() {
     const [menu, setMenu] = useState([]);
     const [order, setOrder] = useState([]);   
+    const [table, setTable] = useState("");
+    const [clientName, setClientName] = useState("");
     
     
     useEffect(() => {
@@ -27,11 +29,27 @@ function Waiter() {
     const allDayMenu = menu.filter(item => item.breakfast === false && item.drink === false)
     const drinks = menu.filter(item => item.drink === true && item.breakfast === false)
 
-    const { register, handleSubmit } = useForm()
+    const { handleSubmit } = useForm()
     const onSubmit = data => { console.log(data) }
 
     const addOrder = (item) => {
-      return setOrder([...order, item])
+      if(!clientName) {
+        alert("Insira o nome do cliente!")
+      } else if(!table) {
+        alert("Insira o número da mesa!")
+      } else {
+        db.collection('pedidos').add({
+          clientName,
+          table,
+          order: order.map(i=> {
+            return {nome: i.nome}
+          }),
+          timestamp: new Date().toLocaleString('pt-BR'),
+          status: 'em preparo',
+
+        })
+        .then(()=> setClientName(''), setTable(''), setOrder([]))
+      }
     }
 
     const removeItem = (item) => {
@@ -84,17 +102,17 @@ function Waiter() {
            
            <form className="order-list" onSubmit={handleSubmit(onSubmit)}>
              <h1>Meu pedido</h1>
+             <Input 
+             type={"text"}
+             placeholder={"nome do cliente"}
+             className={"client-name"}
+             focusOut={i=>setClientName(i.currentTarget.value)}
+             />
            <Input 
             type={"number"}
             placeholder={"mesa"}
             className={"table-number"}
-            onChange={register({required: true, maxLength: 2})}
-            />
-            <Input 
-            type={"text"}
-            placeholder={"nome do cliente"}
-            className={"client-name"}
-            handleClick={register({required: true, maxLength: 10})}
+            focusOut={i=>setTable(i.currentTarget.value)}
             />
               {order.map((item, index)=> <p key={index}>
                 {item.nome} R${item.valor},00
@@ -107,6 +125,7 @@ function Waiter() {
               <Input
               className={"send"}
               type={"submit"}
+              handleClick={addOrder}
               />
             </form>
         </div>
