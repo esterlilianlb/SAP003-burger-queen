@@ -35,7 +35,9 @@ function Waiter() {
     }
 
     const removeItem = (item) => {
-      
+      const index = (order.indexOf(item))
+      order.splice(index, 1)
+      setOrder([...order])
     }
 
 
@@ -94,11 +96,11 @@ function Waiter() {
             className={"client-name"}
             handleClick={register({required: true, maxLength: 10})}
             />
-              {order.map((item, index)=> <p key={item.id + index}>
+              {order.map((item, index)=> <p key={index}>
                 {item.nome} R${item.valor},00
                 <Button
                 title={'x'}
-                handleClick={() => removeItem }
+                handleClick={() => removeItem(item) }
                 />
               </p>)}
               <p>Total: </p>
