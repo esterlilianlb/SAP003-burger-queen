@@ -8,11 +8,11 @@ function Nav() {
         <ul className="sections">
           <li>
           <input type='radio' className="tab" name='css-tabs' defaultChecked/>
-          <Link to="/waiter">Waiter</Link>
+          <Link to="/waiter">Salão</Link>
           </li>
           <li>
           <input type='radio' className="tab" name='css-tabs' defaultChecked/>
-          <Link to="/kitchen">Kitchen</Link>
+          <Link to="/kitchen">Cozinha</Link>
           </li>
         </ul>
       </nav>
