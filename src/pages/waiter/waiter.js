@@ -88,6 +88,7 @@ function Waiter() {
             <label htmlFor='tab2' className='label'>Lanche</label>
            <section className="allday-menu" id='panel'>
                <section className="allday-food">
+           <h4>Comidas</h4>
                  {allDayMenu.map((item, index) => <MenuCard
                key={index}
                title={item.nome}
@@ -97,6 +98,7 @@ function Waiter() {
                )}  
                 </section>
            <section className="allday-drinks">
+                <h4>Bebidas</h4>
               {drinks.map((item, index)=> <MenuCard
                 key={index}
                 title={item.nome}
