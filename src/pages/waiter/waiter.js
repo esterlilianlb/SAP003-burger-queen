@@ -15,8 +15,7 @@ function Waiter() {
     const [order, setOrder] = useState([]);   
     const [table, setTable] = useState("");
     const [clientName, setClientName] = useState("");
-    const [total, setTotal] = useState(0)
-    
+        
     
     useEffect(() => {
         db.collection('menu').get().then(snapshot=> 
@@ -48,7 +47,7 @@ function Waiter() {
           }),
           timestamp: new Date().toLocaleString('pt-BR'),
           status: 'em preparo',
-
+          
         })
         .then(()=> setClientName(''), setTable(''), setOrder([]))
       }
@@ -60,6 +59,11 @@ function Waiter() {
       setOrder([...order])
     }
 
+    const totalPrice = order.reduce((acc, item)=> {
+      return acc + (item.valor)
+    }, 0);
+
+        
 
     return(
       <div>
@@ -130,7 +134,7 @@ function Waiter() {
                 handleClick={() => removeItem(item) }
                 />
               </p>)}
-              <p>Total: </p>
+              <p>Total: R${totalPrice},00 </p>
               <Input
               className={"send"}
               type={"submit"}

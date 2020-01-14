@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Nav from '../../components/Nav/Nav'
 import db from '../../utils/config'
+import './kitchen.css';
 
 function Kitchen() {
 
@@ -19,7 +20,7 @@ function Kitchen() {
         
         <div className="nav"><Nav/></div>
     {ordersToDo.map((item, index)=> 
-      <div key={index}>
+      <div className="kitchen-card" key={index}>
         <p>Nome: {item.clientName}</p>
         <p>Mesa: {item.table}</p>
         {item.order.forEach(item => <p>Pedido: {item}</p>)}
