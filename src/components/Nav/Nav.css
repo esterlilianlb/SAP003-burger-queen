@@ -9,10 +9,10 @@ li {
     cursor: pointer;
     padding:30px 40px;
     margin:0px 2px;
-    background:#08036d;
+    background: #2A3340;
     display: inline-block;
-    color:#fff;
-    border-radius:6px 6px 0px 0px;
+    color:#F2A007;
+    border-radius: 60px;
     box-shadow: 0 0.5rem 0.8rem #00000080;
     font-size: 30px;
 }
@@ -22,7 +22,7 @@ li {
 }
 
 a {
-    color: #fff;
+    color: #F2A007;
     text-decoration: none;
 }
 

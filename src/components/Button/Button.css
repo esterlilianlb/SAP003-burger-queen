@@ -2,12 +2,12 @@ button {
     border-radius: 8px;
     width: 25px;
     height: auto;
-    background: #08086D;
-    color: #FFF;
+    background: #A62205;
+    color: #F2A007;
     font-weight: 20px;
     text-align: center;
 }
 
 button:active {
-    background: lightseagreen;
+    background: #D9A05B;
 }

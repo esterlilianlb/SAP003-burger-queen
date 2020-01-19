@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Nav from '../../components/Nav/Nav'
 import db from '../../utils/config'
 import './kitchen.css';
+import logo from '../../images/logo.png';
 
 function Kitchen() {
 
@@ -17,13 +18,16 @@ function Kitchen() {
 }, []);
     return(
       <div>
-        
+        <div className="logo-waiter">
+        <img alt="burger-queen" src={logo}/>
+        <h1>Burger Queen</h1>
+        </div>
         <div className="nav"><Nav/></div>
     {ordersToDo.map((item, index)=> 
       <div className="kitchen-card" key={index}>
         <p>Nome: {item.clientName}</p>
         <p>Mesa: {item.table}</p>
-        {item.order.forEach(item => <p>Pedido: {item}</p>)}
+        <span>Pedido: {item.order.map((item, index) => <p key={index}>{item.nome}</p>)}</span>
         <p>Status: {item.status}</p>
         <p>Hora do pedido: {item.timestamp}</p>
 
