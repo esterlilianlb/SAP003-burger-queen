@@ -63,7 +63,7 @@ function Waiter() {
       return acc + (item.valor)
     }, 0);
 
-        
+          
 
     return(
       <div>
@@ -77,10 +77,10 @@ function Waiter() {
         <div className="main-div">
           
           <div className="menu">
-            <Input name='tabs' onChange ='checked' type='radio' id='tab1' className='input' />
-            <label htmlFor='tab1' className='label'>Café da Manhã</label>
-            
+            {/* <Input name='tabs' onChange ='checked' type='radio' id='tab1' className='input' />
+            <label htmlFor='tab1' className='label'>Café da Manhã</label> */}
            <section className="breakfast-menu" id='panel'>
+             <h2>Café da manhã</h2>
            {breakfastMenu.map((item, index) => <MenuCard
            key={index}
            title={item.nome}
@@ -88,9 +88,8 @@ function Waiter() {
            valor={" R$"+item.valor}
            />)}
            </section>
-           <Input name='tabs' type='radio' id='tab2' className='input' />
-            <label htmlFor='tab2' className='label'>Lanche</label>
            <section className="allday-menu" id='panel'>
+             <h2>Lanche</h2>
                <section className="allday-food">
            <h4>Comidas</h4>
                  {allDayMenu.map((item, index) => <MenuCard
@@ -111,6 +110,9 @@ function Waiter() {
                 />)} 
            </section>                
            </section>
+           {/* <Input name='tabs' type='radio' id='tab2' className='input' />
+            <label htmlFor='tab2' className='label'>Lanche</label> */}
+           
            </div>
                       
            <form className="order-list" onSubmit={handleSubmit(onSubmit)}>

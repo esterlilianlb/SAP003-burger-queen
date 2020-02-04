@@ -17,7 +17,7 @@ function Kitchen() {
     
 }, []);
     return(
-      <div>
+      <div className="main-kitchen">
         <div className="logo-waiter">
         <img alt="burger-queen" src={logo}/>
         <h1>Burger Queen</h1>

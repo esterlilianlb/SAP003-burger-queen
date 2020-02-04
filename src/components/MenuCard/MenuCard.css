@@ -1,7 +1,6 @@
 div.menu-card {
-    border: 1px solid black;
-    background: #08086D;
-    color: #fff;
+    background: #2a3340;
+    color: #f2a007;
     font-weight: bold;
     display: flex;
     width: 200px;
