@@ -48,5 +48,9 @@ Estas são as informações que temos do cliente:
 >
 
 
+![Screen-Shot-2020-04-13-at-23.46.26.png](https://www.imagemhost.com.br/images/2020/04/13/Screen-Shot-2020-04-13-at-23.46.26.png)
 
+[![Screen-Shot-2020-04-13-at-23.48.55.png](https://www.imagemhost.com.br/images/2020/04/13/Screen-Shot-2020-04-13-at-23.48.55.png)](https://www.imagemhost.com.br/image/iQL3V)
+
+![Screen-Shot-2020-04-13-at-23.50.04.png](https://www.imagemhost.com.br/images/2020/04/13/Screen-Shot-2020-04-13-at-23.50.04.png)
 
